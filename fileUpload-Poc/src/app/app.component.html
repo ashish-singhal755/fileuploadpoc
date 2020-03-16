@@ -1,0 +1,30 @@
+<div class="container">    
+  <div class="row">    
+    <div class="col-md-8 form-group">    
+      <input type="file" class="form-control" (change)="uploadedFile($event)" placeholder="Upload file" accept=".xlsx">    
+    </div>    
+  </div>    
+  <div class="row">    
+    <div class="col-md-2 form-group">    
+      <button type="button" class="btn btn-info" (click)="readAsCSV()">Read as CSV</button>    
+    </div>    
+  </div> 
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>S.No.</td>
+          <td>Event type</td>
+          <td>Event Code</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let data of showData; let i = index">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{data.EventType}}</td>
+          <td>{{data.EventCode}}</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>   
+</div>    
